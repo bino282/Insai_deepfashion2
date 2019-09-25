@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import os
 
-base_dir=""
+base_dir="../local/coco/train"
 dataset = {
     "info": {},
     "licenses": [],
@@ -105,9 +105,10 @@ dataset['categories'].append({
 })
 
 sub_index = 0 # the index of ground truth instance
+num_images = 391000
 for num in range(1,num_images+1):
-    json_name = os.path.join(base_dir,'val_annos/') + str(num).zfill(6)+'.json'
-    image_name = os.path.join(base_dir,'val/') + str(num).zfill(6)+'.jpg'
+    json_name = os.path.join(base_dir,'annos/') + str(num).zfill(6)+'.json'
+    image_name = os.path.join(base_dir,'image/') + str(num).zfill(6)+'.jpg'
 
     if (num>=0):
         imag = Image.open(image_name)
