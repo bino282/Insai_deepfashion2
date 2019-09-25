@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import os
 
-base_dir="../local/coco/train"
+base_dir="../local/coco/validation"
 dataset = {
     "info": {},
     "licenses": [],
@@ -105,7 +105,7 @@ dataset['categories'].append({
 })
 
 sub_index = 0 # the index of ground truth instance
-num_images = 391000
+num_images = 34000
 for num in range(1,num_images+1):
     json_name = os.path.join(base_dir,'annos/') + str(num).zfill(6)+'.json'
     image_name = os.path.join(base_dir,'image/') + str(num).zfill(6)+'.jpg'
@@ -236,6 +236,6 @@ for num in range(1,num_images+1):
                     })
 
 
-json_name = os.path.join(base_dir,'deepfashion2.json')
+json_name = os.path.join(base_dir,'deepfashion2_val.json')
 with open(json_name, 'w') as f:
   json.dump(dataset, f,indent=4)
