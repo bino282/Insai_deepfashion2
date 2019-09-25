@@ -238,4 +238,4 @@ for num in range(1,num_images+1):
 
 json_name = os.path.join(base_dir,'deepfashion2.json')
 with open(json_name, 'w') as f:
-  json.dump(dataset, f)
+  json.dump(dataset, f,indent=4)
