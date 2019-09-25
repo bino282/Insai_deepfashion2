@@ -253,7 +253,7 @@ def create_generators(args, preprocess_image):
 
         train_generator = CocoGenerator(
             args.coco_path,
-            'train2017',
+            'retrieval_test_shop_information',
             transform_generator=transform_generator,
             visual_effect_generator=visual_effect_generator,
             **common_args
@@ -261,7 +261,7 @@ def create_generators(args, preprocess_image):
 
         validation_generator = CocoGenerator(
             args.coco_path,
-            'val2017',
+            'retrieval_test_shop_information',
             shuffle_groups=False,
             **common_args
         )
