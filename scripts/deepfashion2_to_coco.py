@@ -111,7 +111,10 @@ for num in range(1,num_images+1):
     image_name = os.path.join(base_dir,'image/') + str(num).zfill(6)+'.jpg'
 
     if (num>=0):
-        imag = Image.open(image_name)
+        try:
+            imag = Image.open(image_name)
+        except:
+            continue
         width, height = imag.size
         with open(json_name, 'r') as f:
             temp = json.loads(f.read())
