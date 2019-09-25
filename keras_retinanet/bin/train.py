@@ -261,7 +261,7 @@ def create_generators(args, preprocess_image):
 
         validation_generator = CocoGenerator(
             args.coco_path,
-            'val',
+            'validation',
             shuffle_groups=False,
             **common_args
         )
