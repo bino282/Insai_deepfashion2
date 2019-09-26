@@ -76,17 +76,18 @@ for file_name in list_file:
     print(file_name)
     with open(os.path.join(base_dir,"meta/json",file_name),'r') as f:
         temp = json.loads(f.read())
+    print(len(temp))
     for p in temp:
         try:
             image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".jpeg"
             imag = Image.open(image_name)
         except:
-            traceback.print_exc()
+            # traceback.print_exc()
             try:
                 image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".png"
                 imag = Image.open(image_name)
             except:
-                traceback.print_exc()
+                # traceback.print_exc()
                 continue
         width, height = imag.size
         dataset['images'].append({
