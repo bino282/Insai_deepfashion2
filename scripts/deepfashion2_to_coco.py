@@ -95,11 +95,11 @@ for file_name in list_file:
                 'height': height
             })
         sub_index = sub_index + 1
-        box = temp[i]['bounding_box']
-        w = box[2]-box[0]
-        h = box[3]-box[1]
-        x_1 = box[0]
-        y_1 = box[1]
+        box = p['bbox']
+        w = box["width"]
+        h = box["height"]
+        x_1 = box["top"]
+        y_1 = box["left"]
         bbox=[x_1,y_1,w,h]
         cat = cat2id[file_name.split('_')[1]]
         dataset['annotations'].append({
