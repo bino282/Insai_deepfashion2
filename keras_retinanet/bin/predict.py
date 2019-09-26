@@ -2,10 +2,10 @@
 import keras
 
 # import keras_retinanet
-from keras_retinanet import models
-from keras_retinanet.utils.image import read_image_bgr, preprocess_image, resize_image
-from keras_retinanet.utils.visualization import draw_box, draw_caption
-from keras_retinanet.utils.colors import label_color
+from .. import models
+from ..utils.image import read_image_bgr, preprocess_image, resize_image
+from ..utils.visualization import draw_box, draw_caption
+from ..utils.colors import label_color
 
 # import miscellaneous modules
 import matplotlib.pyplot as plt
