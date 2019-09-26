@@ -105,7 +105,8 @@ for file_name in list_file:
                         'bbox': bbox,
                         'category_id': cat,
                         'id': sub_index,
-                        'image_id': p["photo"]
+                        'image_id': p["photo"],
+                        'iscrowd': 0
                     })
 
 
