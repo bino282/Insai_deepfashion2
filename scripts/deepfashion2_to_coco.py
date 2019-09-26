@@ -87,7 +87,7 @@ for file_name in list_file:
                 'date_captured': '',
                 'file_name': image_name,
                 'flickr_url': '',
-                'id': int(str(p["photo"]).zfill(9)),
+                'id': str(p["photo"]).zfill(9),
                 'license': 0,
                 'width': width,
                 'height': height
@@ -105,7 +105,7 @@ for file_name in list_file:
                         'bbox': bbox,
                         'category_id': cat,
                         'id': sub_index,
-                        'image_id': int(str(p["photo"]).zfill(9))
+                        'image_id': str(p["photo"]).zfill(9)
                     })
 
 
