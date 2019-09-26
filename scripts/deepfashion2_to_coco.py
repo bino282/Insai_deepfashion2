@@ -71,7 +71,9 @@ cat2id = {"bags":1,"belts":2,"dresses":3,"eyewear":4,"footwear":5,"hats":6,"legg
 sub_index = 0 # the index of ground truth instance
 list_file = os.listdir(os.path.join(base_dir,"meta/json"))
 for file_name in list_file:
-    with open(file_name,'r') as f:
+    if "train" not in file_name:
+        continue
+    with open(os.path.join(base_dir,"meta/json",file_name,'r') as f:
         temp = json.loads(f.read())
     for p in temp:
         image_name = os.path.join(base_dir,'image/')+p["photo"]+".jpg"
