@@ -71,7 +71,7 @@ cat2id = {"bags":1,"belts":2,"dresses":3,"eyewear":4,"footwear":5,"hats":6,"legg
 sub_index = 0 # the index of ground truth instance
 list_file = os.listdir(os.path.join(base_dir,"meta/json"))
 for file_name in list_file:
-    if "train" not in file_name:
+    if "test" not in file_name:
         continue
     print(file_name)
     with open(os.path.join(base_dir,"meta/json",file_name),'r') as f:
@@ -115,6 +115,6 @@ for file_name in list_file:
                     })
 
 print(len(dataset["images"]))
-json_name = os.path.join(base_dir,'street2shop.json')
+json_name = os.path.join(base_dir,'street2shop_test.json')
 with open(json_name, 'w') as f:
   json.dump(dataset, f,indent=4)
