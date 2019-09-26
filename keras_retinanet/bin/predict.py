@@ -44,5 +44,38 @@ def main():
     #model = models.convert_model(model)
 
     print(model.summary())
+    # load image
+    image = read_image_bgr('000002281.jpeg')
+
+    # copy to draw on
+    draw = image.copy()
+    draw = cv2.cvtColor(draw, cv2.COLOR_BGR2RGB)
+
+    # preprocess image for network
+    image = preprocess_image(image)
+    image, scale = resize_image(image)
+
+    # process image
+    start = time.time()
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+    print("processing time: ", time.time() - start)
+
+    # correct for image scale
+    boxes /= scale
+
+    # visualize detections
+    for box, score, label in zip(boxes[0], scores[0], labels[0]):
+        # scores are sorted so we can break
+        if score < 0.5:
+            break
+            
+        color = label_color(label)
+        
+        b = box.astype(int)
+        draw_box(draw, b, color=color)
+        
+        caption = "{} {:.3f}".format(label, score)
+        draw_caption(draw, b, caption)
+    cv2.imwrite("result.jpeg",draw)
 if __name__ == '__main__':
     main()
