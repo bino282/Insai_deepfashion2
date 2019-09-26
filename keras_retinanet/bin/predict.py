@@ -45,6 +45,7 @@ def main():
 
     print(model.summary())
     # load image
+    ori_image = cv2.imread('000002281.jpeg')
     image = read_image_bgr('000002281.jpeg')
 
     # copy to draw on
@@ -72,10 +73,7 @@ def main():
         color = label_color(label)
         
         b = box.astype(int)
-        draw_box(draw, b, color=color)
-        
-        caption = "{} {:.3f}".format(label, score)
-        draw_caption(image, b, caption)
-    cv2.imwrite("result.jpeg",image)
+        draw_box(ori_image, b, color=color)
+    cv2.imwrite("result.jpeg",ori_image)
 if __name__ == '__main__':
     main()
