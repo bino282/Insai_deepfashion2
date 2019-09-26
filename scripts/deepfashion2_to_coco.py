@@ -111,6 +111,6 @@ for file_name in list_file:
                     })
 
 
-json_name = os.path.join(base_dir,'deepfashion2_val.json')
+json_name = os.path.join(base_dir,'street2shop.json')
 with open(json_name, 'w') as f:
   json.dump(dataset, f,indent=4)
