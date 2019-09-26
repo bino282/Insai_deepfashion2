@@ -41,7 +41,7 @@ def main():
 
     # if the model is not converted to an inference model, use the line below
     # see: https://github.com/fizyr/keras-retinanet#converting-a-training-model-to-inference-model
-    #model = models.convert_model(model)
+    model = models.convert_model(model)
 
     print(model.summary())
     # load image
