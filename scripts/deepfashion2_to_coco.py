@@ -96,8 +96,8 @@ for file_name in list_file:
         box = p['bbox']
         w = box["width"]
         h = box["height"]
-        x_1 = box["top"]
-        y_1 = box["left"]
+        x_1 = box["left"]
+        y_1 = box["top"]
         bbox=[x_1,y_1,w,h]
         cat = cat2id[file_name.split('_')[-1].split('.')[0]]
         dataset['annotations'].append({
