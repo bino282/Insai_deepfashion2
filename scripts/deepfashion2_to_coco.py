@@ -78,6 +78,7 @@ for file_name in list_file:
     for p in temp:
         image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".jpeg"
         print(image_name)
+        print(p)
         try:
             imag = Image.open(image_name)
         except:
