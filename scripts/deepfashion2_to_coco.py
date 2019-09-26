@@ -77,8 +77,6 @@ for file_name in list_file:
         temp = json.loads(f.read())
     for p in temp:
         image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".jpeg"
-        print(image_name)
-        print(p)
         try:
             imag = Image.open(image_name)
         except:
@@ -107,7 +105,7 @@ for file_name in list_file:
                         'bbox': bbox,
                         'category_id': cat,
                         'id': sub_index,
-                        'image_id': p["photo"]
+                        'image_id': p["photo"].zfill(9)
                     })
 
 
