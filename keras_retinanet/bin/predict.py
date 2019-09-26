@@ -45,8 +45,8 @@ def main():
 
     print(model.summary())
     # load image
-    ori_image = cv2.imread('test.jpeg')
-    image = read_image_bgr('test.jpeg')
+    ori_image = cv2.imread('000002281.jpeg')
+    image = read_image_bgr('000002281.jpeg')
 
     # copy to draw on
     draw = image.copy()
