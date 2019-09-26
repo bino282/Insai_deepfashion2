@@ -77,6 +77,7 @@ for file_name in list_file:
         temp = json.loads(f.read())
     for p in temp:
         image_name = os.path.join(base_dir,'images/')+str(p["photo"])+".jpeg"
+        print(image_name)
         try:
             imag = Image.open(image_name)
         except:
