@@ -101,7 +101,7 @@ for file_name in list_file:
         x_1 = box["top"]
         y_1 = box["left"]
         bbox=[x_1,y_1,w,h]
-        cat = cat2id[file_name.split('_')[1]]
+        cat = cat2id[file_name.split('_')[-1]]
         dataset['annotations'].append({
                         'area': w*h,
                         'bbox': bbox,
