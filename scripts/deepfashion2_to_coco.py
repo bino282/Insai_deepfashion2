@@ -70,6 +70,7 @@ dataset['categories'].append({
 cat2id = {"bags":1,"belts":2,"dresses":3,"eyewear":4,"footwear":5,"hats":6,"leggings":7,"outerwear":8,"pants":9,"skirts":10,"tops":11}
 sub_index = 0 # the index of ground truth instance
 list_file = os.listdir(os.path.join(base_dir,"meta/json"))
+fw = open("error.txt",'w')
 for file_name in list_file:
     if "train" not in file_name:
         continue
@@ -88,6 +89,8 @@ for file_name in list_file:
                 imag = Image.open(image_name)
             except:
                 # traceback.print_exc()
+                fw.write(str(p["photo"]).zfill(9))
+                fw.write("\n")
                 continue
         width, height = imag.size
         dataset['images'].append({
@@ -116,7 +119,7 @@ for file_name in list_file:
                         'image_id': p["photo"],
                         'iscrowd': 0
                     })
-
+fw.close()
 print(len(dataset["images"]))
 json_name = os.path.join(base_dir,'street2shop_train.json')
 with open(json_name, 'w') as f:
