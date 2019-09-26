@@ -75,7 +75,7 @@ def main():
         draw_box(draw, b, color=color)
         
         caption = "{} {:.3f}".format(label, score)
-        draw_caption(draw, b, caption)
-    cv2.imwrite("result.jpeg",draw)
+        draw_caption(image, b, caption)
+    cv2.imwrite("result.jpeg",image)
 if __name__ == '__main__':
     main()
