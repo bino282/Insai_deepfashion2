@@ -73,7 +73,7 @@ list_file = os.listdir(os.path.join(base_dir,"meta/json"))
 for file_name in list_file:
     if "train" not in file_name:
         continue
-    with open(os.path.join(base_dir,"meta/json",file_name,'r') as f:
+    with open(os.path.join(base_dir,"meta/json",file_name),'r') as f:
         temp = json.loads(f.read())
     for p in temp:
         image_name = os.path.join(base_dir,'image/')+p["photo"]+".jpg"
