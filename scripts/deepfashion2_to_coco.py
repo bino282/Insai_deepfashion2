@@ -109,7 +109,7 @@ for file_name in list_file:
                         'iscrowd': 0
                     })
 
-
+print(len(dataset["images"]))
 json_name = os.path.join(base_dir,'street2shop.json')
 with open(json_name, 'w') as f:
   json.dump(dataset, f,indent=4)
