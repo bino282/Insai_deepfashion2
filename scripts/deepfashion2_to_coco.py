@@ -76,16 +76,20 @@ for file_name in list_file:
     with open(os.path.join(base_dir,"meta/json",file_name),'r') as f:
         temp = json.loads(f.read())
     for p in temp:
-        image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".jpeg"
         try:
+            image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".jpeg"
             imag = Image.open(image_name)
         except:
-            continue
+            try:
+                image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".png"
+                imag = Image.open(image_name)
+            except:
+                continue
         width, height = imag.size
         dataset['images'].append({
                 'coco_url': '',
                 'date_captured': '',
-                'file_name': str(p["photo"]).zfill(9)+".jpeg",
+                'file_name': image_name.split('/')[-1],
                 'flickr_url': '',
                 'id': p["photo"],
                 'license': 0,
