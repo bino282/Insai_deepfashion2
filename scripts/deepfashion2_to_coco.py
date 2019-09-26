@@ -85,7 +85,7 @@ for file_name in list_file:
         dataset['images'].append({
                 'coco_url': '',
                 'date_captured': '',
-                'file_name': image_name,
+                'file_name': str(p["photo"]).zfill(9)+".jpeg",
                 'flickr_url': '',
                 'id': p["photo"],
                 'license': 0,
