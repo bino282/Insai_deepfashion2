@@ -76,7 +76,7 @@ for file_name in list_file:
     with open(os.path.join(base_dir,"meta/json",file_name),'r') as f:
         temp = json.loads(f.read())
     for p in temp:
-        image_name = os.path.join(base_dir,'images/')+str(p["photo"])+".jpeg"
+        image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".jpeg"
         print(image_name)
         try:
             imag = Image.open(image_name)
