@@ -2,7 +2,7 @@ import json
 from PIL import Image
 import numpy as np
 import os
-
+import traceback
 base_dir="../local/street2shop/"
 dataset = {
     "info": {},
@@ -81,10 +81,12 @@ for file_name in list_file:
             image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".jpeg"
             imag = Image.open(image_name)
         except:
+            traceback.print_exc()
             try:
                 image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".png"
                 imag = Image.open(image_name)
             except:
+                traceback.print_exc()
                 continue
         width, height = imag.size
         dataset['images'].append({
