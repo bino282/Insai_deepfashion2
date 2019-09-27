@@ -74,8 +74,8 @@ with open("cat2id.txt","w") as fr:
         fr.write("\n")
 sub_index = 0 # the index of ground truth instance
 list_file = os.listdir(os.path.join(base_dir,"meta/json"))
-fw = open("error.txt",'w')
-f = open("train.csv","w")
+# fw = open("error.txt",'w')
+f_csv = open("train.csv","w")
 for file_name in list_file:
     if "train" not in file_name:
         continue
@@ -97,8 +97,8 @@ for file_name in list_file:
                 row.append(image_name)
             except:
                 # traceback.print_exc()
-                fw.write(str(p["photo"]).zfill(9))
-                fw.write("\n")
+                # fw.write(str(p["photo"]).zfill(9))
+                # fw.write("\n")
                 continue
         width, height = imag.size
         dataset['images'].append({
@@ -129,10 +129,10 @@ for file_name in list_file:
                         'image_id': p["photo"],
                         'iscrowd': 0
                     })
-        f.write(",".join(row))
-        f.write("\n")
-f.close()
-fw.close()
+        f_csv.write(",".join(row))
+        f_csv.write("\n")
+f_csv.close()
+#fw.close()
 print(len(dataset["images"]))
 json_name = os.path.join(base_dir,'street2shop_train.json')
 with open(json_name, 'w') as f:
