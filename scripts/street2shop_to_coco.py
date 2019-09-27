@@ -68,9 +68,14 @@ dataset['categories'].append({
     'supercategory': ""
 })
 cat2id = {"bags":1,"belts":2,"dresses":3,"eyewear":4,"footwear":5,"hats":6,"leggings":7,"outerwear":8,"pants":9,"skirts":10,"tops":11}
+with open("cat2id.txt","w") as fr:
+    for e in cat2id:
+        fr.write(e+','+str(cat2id[e]-1))
+        fr.write("\n")
 sub_index = 0 # the index of ground truth instance
 list_file = os.listdir(os.path.join(base_dir,"meta/json"))
 fw = open("error.txt",'w')
+f = open("train.csv","w")
 for file_name in list_file:
     if "train" not in file_name:
         continue
@@ -79,14 +84,17 @@ for file_name in list_file:
         temp = json.loads(f.read())
     print(len(temp))
     for p in temp:
+        row = []
         try:
             image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".jpeg"
             imag = Image.open(image_name)
+            row.append(image_name)
         except:
             # traceback.print_exc()
             try:
                 image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".png"
                 imag = Image.open(image_name)
+                row.append(image_name)
             except:
                 # traceback.print_exc()
                 fw.write(str(p["photo"]).zfill(9))
@@ -110,6 +118,8 @@ for file_name in list_file:
         x_1 = box["left"]
         y_1 = box["top"]
         bbox=[x_1,y_1,w,h]
+        row.append(x_1,y_1,x_1+w,y_1+h)
+        row.append(file_name.split('_')[-1].split('.')[0])
         cat = cat2id[file_name.split('_')[-1].split('.')[0]]
         dataset['annotations'].append({
                         'area': w*h,
@@ -119,6 +129,9 @@ for file_name in list_file:
                         'image_id': p["photo"],
                         'iscrowd': 0
                     })
+        f.write(",".join(row))
+        f.write("\n")
+f.close()
 fw.close()
 print(len(dataset["images"]))
 json_name = os.path.join(base_dir,'street2shop_train.json')
