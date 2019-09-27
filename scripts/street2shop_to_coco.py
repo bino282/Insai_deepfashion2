@@ -117,9 +117,12 @@ for file_name in list_file:
         h = int(box["height"])
         x_1 = int(box["left"])
         y_1 = int(box["top"])
-        bbox=[x_1,y_1,w,h]
-        row = row+[str(x_1),str(y_1),str(x_1+w),str(y_1+h)]
-        row.append(file_name.split('_')[-1].split('.')[0])
+        if(w==0 or h==0):
+            row = row+["","","","",""]
+        else:
+            bbox=[x_1,y_1,w,h]
+            row = row+[str(x_1),str(y_1),str(x_1+w),str(y_1+h)]
+            row.append(file_name.split('_')[-1].split('.')[0])
         cat = cat2id[file_name.split('_')[-1].split('.')[0]]
         dataset['annotations'].append({
                         'area': w*h,
