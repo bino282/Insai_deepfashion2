@@ -74,6 +74,8 @@ def main():
         
         b = box.astype(int)
         draw_box(ori_image, b, color=color)
+        caption = "{} {:.3f}".format(labels_to_names[label], score)
+        draw_caption(ori_image, b, caption)
     cv2.imwrite("result.jpeg",ori_image)
 if __name__ == '__main__':
     main()
