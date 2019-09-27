@@ -75,9 +75,9 @@ with open("cat2id.txt","w") as fr:
 sub_index = 0 # the index of ground truth instance
 list_file = os.listdir(os.path.join(base_dir,"meta/json"))
 # fw = open("error.txt",'w')
-f_csv = open("train.csv","w")
+f_csv = open("test.csv","w")
 for file_name in list_file:
-    if "train" not in file_name:
+    if "test" not in file_name:
         continue
     print(file_name)
     with open(os.path.join(base_dir,"meta/json",file_name),'r') as f:
