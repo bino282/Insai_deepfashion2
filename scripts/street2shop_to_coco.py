@@ -113,10 +113,10 @@ for file_name in list_file:
             })
         sub_index = sub_index + 1
         box = p['bbox']
-        w = box["width"]
-        h = box["height"]
-        x_1 = box["left"]
-        y_1 = box["top"]
+        w = int(box["width"])
+        h = int(box["height"])
+        x_1 = int(box["left"])
+        y_1 = int(box["top"])
         bbox=[x_1,y_1,w,h]
         row = row+[str(x_1),str(y_1),str(x_1+w),str(y_1+h)]
         row.append(file_name.split('_')[-1].split('.')[0])
