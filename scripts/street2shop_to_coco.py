@@ -118,7 +118,7 @@ for file_name in list_file:
         x_1 = box["left"]
         y_1 = box["top"]
         bbox=[x_1,y_1,w,h]
-        row = row+[x_1,y_1,x_1+w,y_1+h]
+        row = row+[str(x_1),str(y_1),str(x_1+w),str(y_1+h)]
         row.append(file_name.split('_')[-1].split('.')[0])
         cat = cat2id[file_name.split('_')[-1].split('.')[0]]
         dataset['annotations'].append({
