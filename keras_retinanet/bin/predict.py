@@ -67,7 +67,7 @@ def main():
     # visualize detections
     for box, score, label in zip(boxes[0], scores[0], labels[0]):
         # scores are sorted so we can break
-        if score < 0.2:
+        if score < 0.1:
             break
             
         color = label_color(label)
