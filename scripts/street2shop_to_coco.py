@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import os
 import traceback
-base_dir="../local/street2shop/"
+base_dir="../../../data/street2shop/"
 dataset = {
     "info": {},
     "licenses": [],

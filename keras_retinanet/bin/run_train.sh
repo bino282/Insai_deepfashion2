@@ -1,0 +1,1 @@
+python train.py csv ../../train.csv ../../name2id.txt
