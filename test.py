@@ -14,8 +14,10 @@ with open("cat2id.txt","r",encoding="utf-8") as lines:
     for line in lines:
         type_list.add(line.strip())
 fw = open("name2id.txt","w",encoding="utf-8")
+index = 0
 for w in list(type_list):
-    fw.write(w)
+    fw.write(w+","+str(index))
     fw.write("\n")
+    index = index + 1
 print(len(type_list))
 fw.close()
