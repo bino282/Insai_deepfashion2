@@ -3,7 +3,9 @@ from PIL import Image
 import numpy as np
 import os
 import traceback
+image_links = {}
 base_dir="../../../data/street2shop/"
+save_dir = "street2shop"
 dataset = {
     "info": {},
     "licenses": [],
@@ -90,13 +92,13 @@ for file_name in list_file:
             imag = Image.open(image_name)
             row.append(image_name)
         except:
-            # traceback.print_exc()
+            #traceback.print_exc()
             try:
                 image_name = os.path.join(base_dir,'images/')+str(p["photo"]).zfill(9)+".png"
                 imag = Image.open(image_name)
                 row.append(image_name)
             except:
-                # traceback.print_exc()
+                #traceback.print_exc()
                 # fw.write(str(p["photo"]).zfill(9))
                 # fw.write("\n")
                 continue

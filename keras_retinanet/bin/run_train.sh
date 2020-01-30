@@ -1,1 +1,1 @@
-python train.py csv ../../train.csv ../../name2id.txt
+python ./keras_retinanet/bin/train.py --batch-size 16 --multi-gpu 3 --multi-gpu-force csv --annotations train.csv --classes name2id.txt

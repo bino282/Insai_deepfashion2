@@ -9,15 +9,33 @@
 # cv2.imshow("image",img)
 # cv2.waitKey(0)
 
-type_list=set()
-with open("cat2id.txt","r",encoding="utf-8") as lines:
+# type_list=set()
+# with open("cat2id.txt","r",encoding="utf-8") as lines:
+#     for line in lines:
+#         type_list.add(line.strip())
+# fw = open("name2id.txt","w",encoding="utf-8")
+# index = 0
+# for w in list(type_list):
+#     fw.write(w+","+str(index))
+#     fw.write("\n")
+#     index = index + 1
+# print(len(type_list))
+# fw.close()
+rows = []
+with open("all_data.csv","r",encoding="utf-8") as lines:
     for line in lines:
-        type_list.add(line.strip())
-fw = open("name2id.txt","w",encoding="utf-8")
-index = 0
-for w in list(type_list):
-    fw.write(w+","+str(index))
+        rows.append(line.strip())
+from sklearn.model_selection import train_test_split
+
+X_train, X_test = train_test_split(rows,test_size=0.1, random_state=42)
+fw = open("train_all.csv","w",encoding="utf-8")
+for r in X_train:
+    fw.write(r)
     fw.write("\n")
-    index = index + 1
-print(len(type_list))
+fw.close()
+
+fw = open("valid_all.csv","w",encoding="utf-8")
+for r in X_test:
+    fw.write(r)
+    fw.write("\n")
 fw.close()
