@@ -18,6 +18,7 @@ import cv2
 import os
 import numpy as np
 import time
+import argparse
 
 # set tf backend to allow memory to grow, instead of claiming everything
 import tensorflow as tf
@@ -113,7 +114,14 @@ keras.backend.tensorflow_backend.set_session(get_session())
 # adjust this to point to your downloaded/trained model
 # models can be downloaded here: https://github.com/fizyr/keras-retinanet/releases
 model_path = os.path.join('../../local/resnet50_csv_15.h5')
+
+parser = argparse.ArgumentParser(description='Simple training script for training a RetinaNet network.')
+parser.add_argument('--model_path',default='../../local/resnet50_csv_15.h5')
+parser.add_argument('--image_path',default='ezgif.jpg')
+parser.add_argument('--thresh',default=0.1)
+args = parser.parse_args()
 def main():
+
     id2name= {}
     with open("name2id.txt",'r',encoding="utf-8") as lines:
         for line in lines:
@@ -121,6 +129,7 @@ def main():
             id2name[tmp[1]]=tmp[0]
     print(id2name)
     # load retinanet model
+    model_path = args.model_path
     model = models.load_model(model_path, backbone_name='resnet50')
 
     # if the model is not converted to an inference model, use the line below
@@ -129,8 +138,8 @@ def main():
 
     # print(model.summary())
     # load image
-    ori_image = cv2.imread('ezgif.jpg')
-    image = read_image_bgr('ezgif.jpg')
+    ori_image = cv2.imread(args.image_path)
+    image = read_image_bgr(args.image_path)
 
     # copy to draw on
     draw = image.copy()
@@ -148,7 +157,7 @@ def main():
     # correct for image scale
     boxes /= scale
     # visualize detections
-    show_box,show_scores,show_lb = select_box(boxes[0], scores[0], labels[0],score_thresh=0.2)
+    show_box,show_scores,show_lb = select_box(boxes[0], scores[0], labels[0],score_thresh=args.thresh)
     for box, score, label in zip(show_box,show_scores,show_lb):
         print(box)
         print(str(label)+" : "+str(score))
