@@ -152,7 +152,7 @@ class CSVGenerator(Generator):
 
         # csv with img_path, x1, y1, x2, y2, class_name
         try:
-            with _open_for_csv(os.path.join(base_dir,csv_data_file)) as file:
+            with _open_for_csv(csv_data_file) as file:
                 self.image_data = _read_annotations(csv.reader(file, delimiter=','), self.classes)
         except ValueError as e:
             raise_from(ValueError('invalid CSV annotations file: {}: {}'.format(csv_data_file, e)), None)
@@ -193,7 +193,7 @@ class CSVGenerator(Generator):
     def image_path(self, image_index):
         """ Returns the image path for image_index.
         """
-        return os.path.join(self.image_names[image_index])
+        return os.path.join(os.path.join(base_dir,self.image_names[image_index]))
 
     def image_aspect_ratio(self, image_index):
         """ Compute the aspect ratio for an image with image_index.
