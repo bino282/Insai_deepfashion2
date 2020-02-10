@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=2,3 python ./keras_retinanet/bin/train.py --batch-size 4 --steps 50000 --multi-gpu 2 --multi-gpu-force csv --annotations train_all.csv --val-annotations valid_all.csv --classes name2id.txt

@@ -22,6 +22,84 @@ import time
 # set tf backend to allow memory to grow, instead of claiming everything
 import tensorflow as tf
 
+def get_iou(bb1, bb2):
+    """
+    Calculate the Intersection over Union (IoU) of two bounding boxes.
+    Parameters
+    ----------
+    bb1 : dict
+        Keys: {'x1', 'x2', 'y1', 'y2'}
+        The (x1, y1) position is at the top left corner,
+        the (x2, y2) position is at the bottom right corner
+    bb2 : dict
+        Keys: {'x1', 'x2', 'y1', 'y2'}
+        The (x, y) position is at the top left corner,
+        the (x2, y2) position is at the bottom right corner
+    Returns
+    -------
+    float
+        in [0, 1]
+    """
+
+    # determine the coordinates of the intersection rectangle
+    bb1 = bb1.flatten().tolist()
+    bb2 = bb2.flatten().tolist()
+    x_left = max(bb1[0], bb2[0])
+    y_top = max(bb1[1], bb2[1])
+    x_right = min(bb1[2], bb2[2])
+    y_bottom = min(bb1[3], bb2[3])
+
+    if x_right < x_left or y_bottom < y_top:
+        return 0.0
+
+    # The intersection of two axis-aligned bounding boxes is always an
+    # axis-aligned bounding box
+    intersection_area = (x_right - x_left) * (y_bottom - y_top)
+
+    # compute the area of both AABBs
+    bb1_area = (bb1[2] - bb1[0]) * (bb1[3] - bb1[1])
+    bb2_area = (bb2[2] - bb2[0]) * (bb2[3] - bb2[1])
+
+    # compute the intersection over union by taking the intersection
+    # area and dividing it by the sum of prediction + ground-truth
+    # areas - the interesection area
+    iou = intersection_area / float(bb1_area + bb2_area - intersection_area)
+    assert iou >= 0.0
+    assert iou <= 1.0
+    return iou
+
+def select_box(boxes,scores,labels,score_thresh=0.5):
+    show_lb = []
+    show_box = []
+    show_scores = []
+    for i in range(len(labels)):
+        if (labels[i] not in show_lb) and scores[i]>score_thresh:
+            show_lb.append(labels[i])
+            show_box.append(boxes[i])
+            show_scores.append(scores[i])
+        else:
+            if(scores[i]>score_thresh):
+                index = show_lb.index(labels[i])
+                if(scores[i]>=show_scores[index]):
+                    show_box[index] = boxes[i]
+                    show_scores[index] = scores[i]
+    show_lb_1 = [show_lb[0]]
+    show_box_1 = [show_box[0]]
+    show_scores_1 = [show_scores[0]]
+    for i in range(1,len(show_box)):
+        check = 0
+        for j in range(len(show_box_1)):
+            if get_iou(show_box[i],show_box_1[j]) > 0.6:
+                if(show_scores[i] >= show_scores_1[j]):
+                    show_box_1[j] = show_box[i]
+                    show_scores_1[j] = show_scores[i]
+                    show_lb_1[j] = show_lb[i]
+                check = 1
+        if(check==0):
+            show_box_1.append(show_box[i])
+            show_lb_1.append(show_lb[i])
+            show_scores_1.append(show_scores[i])
+    return show_box_1,show_scores_1,show_lb_1
 def get_session():
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
@@ -34,8 +112,14 @@ def get_session():
 keras.backend.tensorflow_backend.set_session(get_session())
 # adjust this to point to your downloaded/trained model
 # models can be downloaded here: https://github.com/fizyr/keras-retinanet/releases
-model_path = os.path.join('./snapshots/resnet50_csv_04.h5')
+model_path = os.path.join('../../local/resnet50_csv_15.h5')
 def main():
+    id2name= {}
+    with open("name2id.txt",'r',encoding="utf-8") as lines:
+        for line in lines:
+            tmp = line.strip().split(',')
+            id2name[tmp[1]]=tmp[0]
+    print(id2name)
     # load retinanet model
     model = models.load_model(model_path, backbone_name='resnet50')
 
@@ -43,10 +127,10 @@ def main():
     # see: https://github.com/fizyr/keras-retinanet#converting-a-training-model-to-inference-model
     model = models.convert_model(model)
 
-    print(model.summary())
+    # print(model.summary())
     # load image
-    ori_image = cv2.imread('test.jpeg')
-    image = read_image_bgr('test.jpeg')
+    ori_image = cv2.imread('ezgif.jpg')
+    image = read_image_bgr('ezgif.jpg')
 
     # copy to draw on
     draw = image.copy()
@@ -63,18 +147,18 @@ def main():
 
     # correct for image scale
     boxes /= scale
-
     # visualize detections
-    for box, score, label in zip(boxes[0], scores[0], labels[0]):
+    show_box,show_scores,show_lb = select_box(boxes[0], scores[0], labels[0],score_thresh=0.2)
+    for box, score, label in zip(show_box,show_scores,show_lb):
+        print(box)
+        print(str(label)+" : "+str(score))
         # scores are sorted so we can break
-        if score < 0.1:
-            break
             
         color = label_color(label)
         
         b = box.astype(int)
         draw_box(ori_image, b, color=color)
-        caption = "{} {:.3f}".format(label, score)
+        caption = "{} {:.3f}".format(id2name[str(label)], score)
         draw_caption(ori_image, b, caption)
     cv2.imwrite("result.jpeg",ori_image)
 if __name__ == '__main__':
