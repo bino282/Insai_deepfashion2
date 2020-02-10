@@ -73,21 +73,19 @@ def select_box(boxes,scores,labels,score_thresh=0.5):
     show_lb = []
     show_box = []
     show_scores = []
-    # for i in range(len(labels)):
-    #     if (labels[i] not in show_lb) and scores[i]>score_thresh:
-    #         show_lb.append(labels[i])
-    #         show_box.append(boxes[i])
-    #         show_scores.append(scores[i])
-    #     else:
-    #         if(scores[i]>score_thresh):
-    #             index = show_lb.index(labels[i])
-    #             if(scores[i]>=show_scores[index]):
-    #                 show_box[index] = boxes[i]
-    #                 show_scores[index] = scores[i]
-
-    show_lb = labels
-    show_box = boxes
-    show_scores = scores
+    for i in range(len(labels)):
+        # if (labels[i] not in show_lb) and scores[i]>score_thresh:
+        if scores[i]>score_thresh:
+            show_lb.append(labels[i])
+            show_box.append(boxes[i])
+            show_scores.append(scores[i])
+        else:
+            continue
+            if(scores[i]>score_thresh):
+                index = show_lb.index(labels[i])
+                if(scores[i]>=show_scores[index]):
+                    show_box[index] = boxes[i]
+                    show_scores[index] = scores[i]
 
     show_lb_1 = [show_lb[0]]
     show_box_1 = [show_box[0]]
