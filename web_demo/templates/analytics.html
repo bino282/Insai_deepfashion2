@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/styles.css') }}">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static',    filename='js/template.js') }}"></script>
+      
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Dectection Testing</a>
+            </div>
+          </div>
+    </nav>
+    <div class="container">
+        <div class="input-group">
+          <input id="image-file" type="file" />
+          <input type="text" value="0.2" id="thresh">
+					<button onclick="display_image()" class="btn btn-primary">Upload</button>
+				</div>
+      <div class="row">
+          <div class="media" id = "show_image">
+          </div>
+      </div>
+    </div>
+    <div class="footer">
+        <p>Made by Insai</p>
+    </div>
+  </body>
+</html>

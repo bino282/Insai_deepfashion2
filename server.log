@@ -1,0 +1,709 @@
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 181, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1579, in predict_on_batch
+    self._make_predict_function()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 378, in _make_predict_function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\backend\tensorflow_backend.py", line 3009, in function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3479, in function
+    return GraphExecutionFunction(inputs, outputs, updates=updates, **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3142, in __init__
+    with ops.control_dependencies([self.outputs[0]]):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 5426, in control_dependencies
+    return get_default_graph().control_dependencies(control_inputs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 4867, in control_dependencies
+    c = self.as_graph_element(c)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3796, in as_graph_element
+    return self._as_graph_element_locked(obj, allow_tensor, allow_operation)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3875, in _as_graph_element_locked
+    raise ValueError("Tensor %s is not an element of this graph." % obj)
+ValueError: Tensor Tensor("filtered_detections/map/TensorArrayStack/TensorArrayGatherV3:0", shape=(?, 300, 4), dtype=float32) is not an element of this graph.
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 184, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1580, in predict_on_batch
+    outputs = self.predict_function(ins)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3292, in __call__
+    run_metadata=self.run_metadata)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\client\session.py", line 1458, in __call__
+    run_metadata_ptr)
+tensorflow.python.framework.errors_impl.FailedPreconditionError: Error while reading resource variable bn2c_branch2c/gamma from Container: localhost. This could mean that the variable was uninitialized. Not found: Resource localhost/bn2c_branch2c/gamma/class tensorflow::Var does not exist.
+	 [[{{node bn2c_branch2c/ReadVariableOp}}]]
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 183, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1580, in predict_on_batch
+    outputs = self.predict_function(ins)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3292, in __call__
+    run_metadata=self.run_metadata)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\client\session.py", line 1458, in __call__
+    run_metadata_ptr)
+tensorflow.python.framework.errors_impl.FailedPreconditionError: Error while reading resource variable bn5b_branch2a/beta from Container: localhost. This could mean that the variable was uninitialized. Not found: Resource localhost/bn5b_branch2a/beta/class tensorflow::Var does not exist.
+	 [[{{node bn5b_branch2a/ReadVariableOp_1}}]]
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 182, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1580, in predict_on_batch
+    outputs = self.predict_function(ins)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3292, in __call__
+    run_metadata=self.run_metadata)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\client\session.py", line 1458, in __call__
+    run_metadata_ptr)
+tensorflow.python.framework.errors_impl.FailedPreconditionError: Error while reading resource variable pyramid_classification/bias from Container: localhost. This could mean that the variable was uninitialized. Not found: Resource localhost/pyramid_classification/bias/class tensorflow::Var does not exist.
+	 [[{{node classification_submodel_4/pyramid_classification/BiasAdd/ReadVariableOp}}]]
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 181, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1580, in predict_on_batch
+    outputs = self.predict_function(ins)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3292, in __call__
+    run_metadata=self.run_metadata)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\client\session.py", line 1458, in __call__
+    run_metadata_ptr)
+tensorflow.python.framework.errors_impl.FailedPreconditionError: Error while reading resource variable bn2a_branch2a/gamma from Container: localhost. This could mean that the variable was uninitialized. Not found: Resource localhost/bn2a_branch2a/gamma/class tensorflow::Var does not exist.
+	 [[{{node bn2a_branch2a/ReadVariableOp}}]]
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 181, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1580, in predict_on_batch
+    outputs = self.predict_function(ins)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3292, in __call__
+    run_metadata=self.run_metadata)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\client\session.py", line 1458, in __call__
+    run_metadata_ptr)
+tensorflow.python.framework.errors_impl.FailedPreconditionError: Error while reading resource variable bn5a_branch2b/gamma from Container: localhost. This could mean that the variable was uninitialized. Not found: Resource localhost/bn5a_branch2b/gamma/class tensorflow::Var does not exist.
+	 [[{{node bn5a_branch2b/ReadVariableOp}}]]
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 179, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1579, in predict_on_batch
+    self._make_predict_function()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 378, in _make_predict_function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\backend\tensorflow_backend.py", line 3009, in function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3479, in function
+    return GraphExecutionFunction(inputs, outputs, updates=updates, **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3142, in __init__
+    with ops.control_dependencies([self.outputs[0]]):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 5426, in control_dependencies
+    return get_default_graph().control_dependencies(control_inputs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 4867, in control_dependencies
+    c = self.as_graph_element(c)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3796, in as_graph_element
+    return self._as_graph_element_locked(obj, allow_tensor, allow_operation)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3875, in _as_graph_element_locked
+    raise ValueError("Tensor %s is not an element of this graph." % obj)
+ValueError: Tensor Tensor("filtered_detections/map/TensorArrayStack/TensorArrayGatherV3:0", shape=(?, 300, 4), dtype=float32) is not an element of this graph.
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 169, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1579, in predict_on_batch
+    self._make_predict_function()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 378, in _make_predict_function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\backend\tensorflow_backend.py", line 3009, in function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3479, in function
+    return GraphExecutionFunction(inputs, outputs, updates=updates, **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3142, in __init__
+    with ops.control_dependencies([self.outputs[0]]):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 5426, in control_dependencies
+    return get_default_graph().control_dependencies(control_inputs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 4867, in control_dependencies
+    c = self.as_graph_element(c)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3796, in as_graph_element
+    return self._as_graph_element_locked(obj, allow_tensor, allow_operation)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3875, in _as_graph_element_locked
+    raise ValueError("Tensor %s is not an element of this graph." % obj)
+ValueError: Tensor Tensor("filtered_detections/map/TensorArrayStack/TensorArrayGatherV3:0", shape=(?, 300, 4), dtype=float32) is not an element of this graph.
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 169, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1579, in predict_on_batch
+    self._make_predict_function()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 378, in _make_predict_function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\backend\tensorflow_backend.py", line 3009, in function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3479, in function
+    return GraphExecutionFunction(inputs, outputs, updates=updates, **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3142, in __init__
+    with ops.control_dependencies([self.outputs[0]]):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 5426, in control_dependencies
+    return get_default_graph().control_dependencies(control_inputs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 4867, in control_dependencies
+    c = self.as_graph_element(c)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3796, in as_graph_element
+    return self._as_graph_element_locked(obj, allow_tensor, allow_operation)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3875, in _as_graph_element_locked
+    raise ValueError("Tensor %s is not an element of this graph." % obj)
+ValueError: Tensor Tensor("filtered_detections/map/TensorArrayStack/TensorArrayGatherV3:0", shape=(?, 300, 4), dtype=float32) is not an element of this graph.
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 170, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1580, in predict_on_batch
+    outputs = self.predict_function(ins)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3292, in __call__
+    run_metadata=self.run_metadata)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\client\session.py", line 1458, in __call__
+    run_metadata_ptr)
+tensorflow.python.framework.errors_impl.FailedPreconditionError: Error while reading resource variable bn5a_branch2b/moving_mean from Container: localhost. This could mean that the variable was uninitialized. Not found: Resource localhost/bn5a_branch2b/moving_mean/class tensorflow::Var does not exist.
+	 [[{{node bn5a_branch2b/FusedBatchNorm/ReadVariableOp}}]]
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 167, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1580, in predict_on_batch
+    outputs = self.predict_function(ins)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3292, in __call__
+    run_metadata=self.run_metadata)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\client\session.py", line 1458, in __call__
+    run_metadata_ptr)
+tensorflow.python.framework.errors_impl.FailedPreconditionError: Error while reading resource variable res2a_branch2b/kernel from Container: localhost. This could mean that the variable was uninitialized. Not found: Resource localhost/res2a_branch2b/kernel/class tensorflow::Var does not exist.
+	 [[{{node res2a_branch2b/convolution/ReadVariableOp}}]]
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 147, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1580, in predict_on_batch
+    outputs = self.predict_function(ins)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3292, in __call__
+    run_metadata=self.run_metadata)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\client\session.py", line 1458, in __call__
+    run_metadata_ptr)
+tensorflow.python.framework.errors_impl.FailedPreconditionError: Error while reading resource variable bn3d_branch2b/gamma from Container: localhost. This could mean that the variable was uninitialized. Not found: Resource localhost/bn3d_branch2b/gamma/class tensorflow::Var does not exist.
+	 [[{{node bn3d_branch2b/ReadVariableOp}}]]
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 147, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1579, in predict_on_batch
+    self._make_predict_function()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 378, in _make_predict_function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\backend\tensorflow_backend.py", line 3009, in function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3479, in function
+    return GraphExecutionFunction(inputs, outputs, updates=updates, **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3142, in __init__
+    with ops.control_dependencies([self.outputs[0]]):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 5426, in control_dependencies
+    return get_default_graph().control_dependencies(control_inputs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 4867, in control_dependencies
+    c = self.as_graph_element(c)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3796, in as_graph_element
+    return self._as_graph_element_locked(obj, allow_tensor, allow_operation)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3875, in _as_graph_element_locked
+    raise ValueError("Tensor %s is not an element of this graph." % obj)
+ValueError: Tensor Tensor("filtered_detections/map/TensorArrayStack/TensorArrayGatherV3:0", shape=(?, 300, 4), dtype=float32) is not an element of this graph.
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 149, in get_box
+    boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1580, in predict_on_batch
+    outputs = self.predict_function(ins)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\keras\backend.py", line 3292, in __call__
+    run_metadata=self.run_metadata)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\client\session.py", line 1458, in __call__
+    run_metadata_ptr)
+tensorflow.python.framework.errors_impl.FailedPreconditionError: Error while reading resource variable bn4d_branch2a/beta from Container: localhost. This could mean that the variable was uninitialized. Not found: Resource localhost/bn4d_branch2a/beta/class tensorflow::Var does not exist.
+	 [[{{node bn4d_branch2a/ReadVariableOp_1}}]]
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 162, in get_box
+    result["labels"].append(id2name[str(lb)])
+NameError: name 'lb' is not defined
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 163, in get_box
+    return json.dumps(result)
+NameError: name 'json' is not defined
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 164, in get_box
+    return json.dumps(result)
+  File "C:\Users\nhanv\Anaconda3\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\nhanv\Anaconda3\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\nhanv\Anaconda3\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\nhanv\Anaconda3\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ndarray is not JSON serializable
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+Exception on /get_detection/0.2 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 164, in get_box
+    return json.dumps(result)
+  File "C:\Users\nhanv\Anaconda3\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\nhanv\Anaconda3\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\nhanv\Anaconda3\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\nhanv\Anaconda3\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type float32 is not JSON serializable
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/4.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/5.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/5.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/4.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/6.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/5.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/4.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/7.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/6.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/6.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/5.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/5.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/5.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/5.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/59.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/4.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/6.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/4.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/3.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/4.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/3.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/000000006.png
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/4.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/5.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/6.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/6.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/ezgif.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/fashion-jackson.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/fashion-jackson.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/ezgif.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/ezgif.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/t.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/test.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/ezgif.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/ezgif.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/t.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/ezgif.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/ezgif.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/ezgif.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/fashion-jackson.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/dien-ao-phao-gio.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/fashion-jackson.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/fashion-jackson.jpg
+E:\InsAI\git\Insai_deepfashion2
+E:\InsAI\git\Insai_deepfashion2/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2/static/uploads/fashion-jackson.jpg
