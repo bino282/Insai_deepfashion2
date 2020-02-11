@@ -34,7 +34,7 @@ def upload_image(thresh):
 		app.logger.info("saving {}".format(saved_path))
 		img.save(saved_path)
 		ori_image = cv2.imread(saved_path)
-		url = 'http://localhost:8081/get_detection/{}'.format(thresh)
+		url = 'http://ec2-18-138-214-93.ap-southeast-1.compute.amazonaws.com:8081/get_detection/{}'.format(thresh)
 		files = {'image': open(saved_path, 'rb')}
 		r = requests.post(url, files=files)
 		show_box = r.json()["boxes"]
