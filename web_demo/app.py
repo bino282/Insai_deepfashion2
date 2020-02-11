@@ -60,4 +60,4 @@ def upload_image(thresh):
 def render_analytics():
 	return render_template('analytics.html', title = 'Recommendation Testing')
 if __name__ == "__main__":
-	app.run(host ='localhost', port = 8801)
+	app.run(host ='0.0.0.0', port = 8801)
