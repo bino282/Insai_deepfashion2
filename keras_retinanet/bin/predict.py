@@ -116,12 +116,11 @@ def get_session():
 keras.backend.tensorflow_backend.set_session(get_session())
 # adjust this to point to your downloaded/trained model
 # models can be downloaded here: https://github.com/fizyr/keras-retinanet/releases
-model_path = os.path.join('../../local/resnet50_csv_15.h5')
 
 parser = argparse.ArgumentParser(description='Simple training script for training a RetinaNet network.')
-parser.add_argument('--model_path',default='../../local/resnet50_csv_15.h5')
-parser.add_argument('--image_path',default='ezgif.jpg')
-parser.add_argument('--thresh',default=0.1,type=float)
+parser.add_argument('--model_path',default='../../local/resnet50_csv_03.h5')
+parser.add_argument('--image_path',default='fashion-jackson.jpg')
+parser.add_argument('--thresh',default=0.3,type=float)
 args = parser.parse_args()
 def main():
 
