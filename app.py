@@ -159,7 +159,6 @@ def get_box(thresh):
         show_box,show_scores,show_lb = select_box(boxes[0], scores[0], labels[0],score_thresh=thresh)
         result = {"boxes":[],"scores":[],"labels":[]}
         for box, score, label in zip(show_box,show_scores,show_lb):
-            print(box_tmp)
             tmp = {}
             Rx = 400/ori_image.shape[1]
             Ry = 600/ori_image.shape[0]
