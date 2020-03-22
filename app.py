@@ -133,6 +133,7 @@ def get_box(thresh):
         img.save(saved_path)
 
         ori_image = cv2.imread(saved_path)
+        ori_image,scale = resize_image(ori_image,400,600)
         image = read_image_bgr(saved_path)
 
         # copy to draw on
@@ -158,15 +159,15 @@ def get_box(thresh):
         show_box,show_scores,show_lb = select_box(boxes[0], scores[0], labels[0],score_thresh=thresh)
         result = {"boxes":[],"scores":[],"labels":[]}
         for box, score, label in zip(show_box,show_scores,show_lb):
-            print(box_tmp)
+            # print(box_tmp)
             tmp = {}
-            Rx = 400/ori_image.shape[0]
-            Ry = 600/ori_image.shape[1]
+            # Rx = 400/ori_image.shape[0]
+            # Ry = 600/ori_image.shape[1]
             box_tmp = box.flatten().tolist()
-            tmp["width"] = Rx*(box_tmp[2]-box_tmp[0])
-            tmp["height"] = Ry*(box_tmp[3] - box_tmp[1])
-            tmp["x"] = Rx*box_tmp[0]
-            tmp["y"] = Ry*box_tmp[1]
+            tmp["width"] = box_tmp[2]-box_tmp[0]
+            tmp["height"] = box_tmp[3] - box_tmp[1]
+            tmp["x"] = box_tmp[0]
+            tmp["y"] = box_tmp[1]
             result["boxes"].append(tmp)
             result["scores"].append(str(score))
             result["labels"].append(id2name[str(label)])
