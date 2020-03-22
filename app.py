@@ -158,7 +158,15 @@ def get_box(thresh):
         show_box,show_scores,show_lb = select_box(boxes[0], scores[0], labels[0],score_thresh=thresh)
         result = {"boxes":[],"scores":[],"labels":[]}
         for box, score, label in zip(show_box,show_scores,show_lb):
-            result["boxes"].append([str(e) for e in box.flatten().tolist()])
+            tmp = {}
+            Rx = 400/ori_image.shape[0]
+            Ry = 600/ori_image.shape[1]
+            box_tmp = box.flatten().tolist()
+            tmp["width"] = Rx*(box_tmp[2]-box_tmp[0])
+            tmp["height"] = Ry*(box_tmp[3] - box_tmp[1])
+            tmp["x"] = Rx*box_tmp[0]
+            tmp["y"] = Ry*box_tmp[1]
+            result["boxes"].append(tmp)
             result["scores"].append(str(score))
             result["labels"].append(id2name[str(label)])
     return json.dumps(result)
