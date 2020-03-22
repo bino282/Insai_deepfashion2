@@ -135,6 +135,7 @@ def get_box(thresh):
         ori_image = cv2.imread(saved_path)
         ori_image,scale = resize_image(ori_image,400,600)
         image = read_image_bgr(saved_path)
+        image,scale = resize_image(image,400,600)
 
         # copy to draw on
         draw = image.copy()
