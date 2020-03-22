@@ -17,7 +17,7 @@ def parse_args():
     parser.add_argument(
         '--config',
         help='train config file path',
-        default='configs/retriever/roi_retriever_vgg.py')
+        default='configs/retriever_in_shop/roi_retriever_vgg.py')
     parser.add_argument(
         '--data_type',
         type=str,
@@ -31,7 +31,7 @@ def parse_args():
     parser.add_argument(
         '--checkpoint',
         type=str,
-        default='checkpoint/Retrieve/vgg/roi/latest.pth',
+        default='../local/VGG_ILSVRC_16_layers_fc_reduced.h5',
         help='the checkpoint file to resume from')
     args = parser.parse_args()
     return args

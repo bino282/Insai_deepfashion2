@@ -106,7 +106,7 @@ def get_session():
 
 from flask import Flask, url_for, send_from_directory, request,render_template
 import logging, os
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 file_handler = logging.FileHandler('server.log')
