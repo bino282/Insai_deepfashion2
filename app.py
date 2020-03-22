@@ -166,8 +166,8 @@ def get_box(thresh):
             box_tmp = box.flatten().tolist()
             tmp["width"] = box_tmp[2]-box_tmp[0]
             tmp["height"] = box_tmp[3] - box_tmp[1]
-            tmp["x"] = box_tmp[0]
-            tmp["y"] = box_tmp[1]
+            tmp["x"] = box_tmp[2]
+            tmp["y"] = box_tmp[3]
             result["boxes"].append(tmp)
             result["scores"].append(str(score))
             result["labels"].append(id2name[str(label)])
