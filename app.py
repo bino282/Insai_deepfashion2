@@ -164,7 +164,7 @@ def get_box(thresh):
     return json.dumps(result)
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Simple training script for training a RetinaNet network.')
-    parser.add_argument('--model_path',default='../../local/resnet50_csv_15.h5')
+    parser.add_argument('--model_path',default='../local/resnet50_csv_15.h5')
     parser.add_argument('--image_path',default='ezgif.jpg')
     parser.add_argument('--thresh',default=0.1,type=float)
     args = parser.parse_args()
