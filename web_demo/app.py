@@ -34,7 +34,11 @@ def upload_image(thresh):
 		app.logger.info("saving {}".format(saved_path))
 		img.save(saved_path)
 		ori_image = cv2.imread(saved_path)
-		url = 'http://ec2-18-138-214-93.ap-southeast-1.compute.amazonaws.com:8081/get_detection/{}'.format(thresh)
+		print(ori_image.shape)
+		old_width = ori_image.shape[1]
+		old_height = ori_image.shape[0]
+		ori_image = cv2.resize(ori_image,(400,600))
+		url = 'http://localhost:8081/get_detection/{}'.format(thresh)
 		files = {'image': open(saved_path, 'rb')}
 		r = requests.post(url, files=files)
 		show_box = r.json()["boxes"]
@@ -45,7 +49,8 @@ def upload_image(thresh):
 			if lb not in lb2id:
 				lb2id[lb]=len(lb2id)
 		for box, score, label in zip(show_box,show_scores,show_lb):
-			box = [float(b) for b in box]		   
+			print(box)
+			box = [float(box["x"]),float(box["y"]),float(box["x"])+float(box["width"]),float(box["y"])+float(box["height"])]	   
 			color = label_color(lb2id[label])
 			box= np.array(box)		
 			b = box.astype(int)
