@@ -147,6 +147,7 @@ def get_box(thresh):
         # process image
         start = time.time()
         with graph.as_default():
+            keras.backend.tensorflow_backend.set_session(sess)
             boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
         print("processing time: ", time.time() - start)
 
