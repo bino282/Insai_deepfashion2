@@ -146,17 +146,17 @@ def get_box(thresh):
 
         # process image
         start = time.time()
-        global sess
-        global graph
         with graph.as_default():
-            keras.backend.tensorflow_backend.set_session(sess)
             boxes, scores, labels = model.predict_on_batch(np.expand_dims(image, axis=0))
         print("processing time: ", time.time() - start)
 
         # correct for image scale
         boxes /= scale
         # visualize detections
-        show_box,show_scores,show_lb = select_box(boxes[0], scores[0], labels[0],score_thresh=thresh)
+        try:
+            show_box,show_scores,show_lb = select_box(boxes[0], scores[0], labels[0],score_thresh=thresh)
+        except:
+            return  {"boxes":[],"scores":[],"labels":[]}
         result = {"boxes":[],"scores":[],"labels":[]}
         for box, score, label in zip(show_box,show_scores,show_lb):
             tmp = {}

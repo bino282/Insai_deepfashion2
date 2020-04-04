@@ -38,7 +38,7 @@ def upload_image(thresh):
 		old_width = ori_image.shape[1]
 		old_height = ori_image.shape[0]
 		ori_image = cv2.resize(ori_image,(400,600))
-		url = 'http://ec2-18-138-214-93.ap-southeast-1.compute.amazonaws.com/:8081/get_detection/{}'.format(thresh)
+		url = 'http://ec2-18-138-214-93.ap-southeast-1.compute.amazonaws.com:8081/get_detection/{}'.format(thresh)
 		files = {'image': open(saved_path, 'rb')}
 		r = requests.post(url, files=files)
 		show_box = r.json()["boxes"]
