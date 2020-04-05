@@ -68,7 +68,7 @@ def get_box(thresh):
         # correct for image scale
         boxes /= scale
         for box, score, label in zip(boxes, scores, labels):
-            if score < 0.5:
+            if score < thresh:
                 continue
             else:
                 boxes_final.append(box)
