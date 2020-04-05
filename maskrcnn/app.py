@@ -74,7 +74,6 @@ def get_box(thresh):
                 boxes_final.append(box)
                 score_final.append(score)
                 label_final.append(label)
-        print(boxes_final)
         result = {"boxes":[],"scores":[],"labels":[]}
         for box, score, label in zip(boxes_final,score_final,label_final):
             tmp = {}
