@@ -30,12 +30,7 @@ PROJECT_HOME = os.path.dirname(os.path.realpath(__file__))
 UPLOAD_FOLDER = '{}/static/uploads/'.format(PROJECT_HOME)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-labels_to_names = {0: 'bag', 1: 'belt', 2: 'boots', 3: 'footwear', 4: 'outer', 5: 'dress', 6: 'sunglasses', 7: 'pants', 8: 'top', 9: 'shorts', 10: 'skirt', 11: 'headwear', 12: 'scarf/tie'}
 from keras_maskrcnn import models
-
-model_path = "../../local/resnet50_modanet.h5"
-model = models.load_model(model_path, backbone_name='resnet50')
-print(model.summary())
 def load_image(path):
     return read_image_bgr(path)
 
@@ -56,7 +51,6 @@ def get_box(thresh):
         saved_path = os.path.join(app.config['UPLOAD_FOLDER'], img_name)
         app.logger.info("saving {}".format(saved_path))
         img.save(saved_path)
-
         image = load_image(saved_path)
         image_shape = image.shape
         image = preprocess_image(image)
@@ -90,6 +84,10 @@ def get_box(thresh):
             result["labels"].append(labels_to_names[label])
     return json.dumps(result)
 if __name__ == "__main__":
+    model_path = "../../local/resnet50_modanet.h5"
+    labels_to_names = {0: 'bag', 1: 'belt', 2: 'boots', 3: 'footwear', 4: 'outer', 5: 'dress', 6: 'sunglasses', 7: 'pants', 8: 'top', 9: 'shorts', 10: 'skirt', 11: 'headwear', 12: 'scarf/tie'}
+    model = models.load_model(model_path, backbone_name='resnet50')
+    print(model.summary())
     sess = get_session()
     graph = tf.get_default_graph()
     keras.backend.tensorflow_backend.set_session(sess)
