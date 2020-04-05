@@ -35,7 +35,7 @@ def load_image(path):
     return read_image_bgr(path)
 
 
-image = load_image("test2.jpg")
+image = load_image("copy.jpg")
 draw = image.copy()
 #draw = cv2.cvtColor(draw, cv2.COLOR_BGR2RGB)
 image_shape = image.shape
@@ -54,6 +54,7 @@ masks  = outputs[-1][0]
 
 # correct for image scale
 boxes /= scale
+
 
 # visualize detections
 for box, score, label, mask in zip(boxes, scores, labels, masks):

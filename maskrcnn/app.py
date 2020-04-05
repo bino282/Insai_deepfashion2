@@ -51,15 +51,20 @@ def get_box(thresh):
         saved_path = os.path.join(app.config['UPLOAD_FOLDER'], img_name)
         app.logger.info("saving {}".format(saved_path))
         img.save(saved_path)
+        ori_image = cv2.imread(saved_path)
+
         image = load_image(saved_path)
         image_shape = image.shape
         image = preprocess_image(image)
         image, scale = resize_image(image)
         with graph.as_default():
-            keras.backend.tensorflow_backend.set_session(sess)
             outputs = model.predict_on_batch(np.expand_dims(image, axis=0))
         boxes  = outputs[-4][0]
+        scores = outputs[-3][0]
+        labels = outputs[-2][0]
         boxes_final = []
+        score_final = []
+        label_final = []
         # correct for image scale
         boxes /= scale
         for box, score, label in zip(boxes, scores, labels):
@@ -69,6 +74,7 @@ def get_box(thresh):
                 boxes_final.append(box)
                 score_final.append(score)
                 label_final.append(label)
+        print(boxes_final)
         result = {"boxes":[],"scores":[],"labels":[]}
         for box, score, label in zip(boxes_final,score_final,label_final):
             tmp = {}
@@ -86,9 +92,9 @@ def get_box(thresh):
 if __name__ == "__main__":
     model_path = "../../local/resnet50_modanet.h5"
     labels_to_names = {0: 'bag', 1: 'belt', 2: 'boots', 3: 'footwear', 4: 'outer', 5: 'dress', 6: 'sunglasses', 7: 'pants', 8: 'top', 9: 'shorts', 10: 'skirt', 11: 'headwear', 12: 'scarf/tie'}
-    model = models.load_model(model_path, backbone_name='resnet50')
-    print(model.summary())
     sess = get_session()
+    sess.run(tf.global_variables_initializer())
     graph = tf.get_default_graph()
     keras.backend.tensorflow_backend.set_session(sess)
+    model = models.load_model(model_path, backbone_name='resnet50')
     app.run(host='0.0.0.0',port=8081,threaded=True)
