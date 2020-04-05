@@ -1,0 +1,72 @@
+E:\InsAI\git\Insai_deepfashion2\maskrcnn
+E:\InsAI\git\Insai_deepfashion2\maskrcnn/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2\maskrcnn/static/uploads/copy.jpg
+Exception on /get_detection/0.4 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 63, in get_box
+    outputs = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1273, in predict_on_batch
+    self._make_predict_function()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 554, in _make_predict_function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\backend\tensorflow_backend.py", line 2744, in function
+    return Function(inputs, outputs, updates=updates, **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\backend\tensorflow_backend.py", line 2546, in __init__
+    with tf.control_dependencies(self.outputs):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 5426, in control_dependencies
+    return get_default_graph().control_dependencies(control_inputs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 4867, in control_dependencies
+    c = self.as_graph_element(c)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3796, in as_graph_element
+    return self._as_graph_element_locked(obj, allow_tensor, allow_operation)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3875, in _as_graph_element_locked
+    raise ValueError("Tensor %s is not an element of this graph." % obj)
+ValueError: Tensor Tensor("regression/concat:0", shape=(?, ?, 4), dtype=float32) is not an element of this graph.
+E:\InsAI\git\Insai_deepfashion2\maskrcnn
+E:\InsAI\git\Insai_deepfashion2\maskrcnn/static/uploads/
+saving E:\InsAI\git\Insai_deepfashion2\maskrcnn/static/uploads/copy.jpg
+Exception on /get_detection/0.4 [POST]
+Traceback (most recent call last):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\app.py", line 58, in get_box
+    outputs = model.predict_on_batch(np.expand_dims(image, axis=0))
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 1273, in predict_on_batch
+    self._make_predict_function()
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\engine\training.py", line 554, in _make_predict_function
+    **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\backend\tensorflow_backend.py", line 2744, in function
+    return Function(inputs, outputs, updates=updates, **kwargs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\keras\backend\tensorflow_backend.py", line 2546, in __init__
+    with tf.control_dependencies(self.outputs):
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 5426, in control_dependencies
+    return get_default_graph().control_dependencies(control_inputs)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 4867, in control_dependencies
+    c = self.as_graph_element(c)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3796, in as_graph_element
+    return self._as_graph_element_locked(obj, allow_tensor, allow_operation)
+  File "C:\Users\nhanv\Anaconda3\lib\site-packages\tensorflow\python\framework\ops.py", line 3875, in _as_graph_element_locked
+    raise ValueError("Tensor %s is not an element of this graph." % obj)
+ValueError: Tensor Tensor("regression/concat:0", shape=(?, ?, 4), dtype=float32) is not an element of this graph.

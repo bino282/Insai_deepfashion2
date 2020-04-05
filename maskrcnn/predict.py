@@ -37,22 +37,10 @@ def load_image(path):
 
 image = load_image("test2.jpg")
 draw = image.copy()
-draw = cv2.cvtColor(draw, cv2.COLOR_BGR2RGB)
+#draw = cv2.cvtColor(draw, cv2.COLOR_BGR2RGB)
 image_shape = image.shape
 image = preprocess_image(image)
 image, scale = resize_image(image)
-
-# run network
-outputs = model.predict_on_batch(np.expand_dims(image, axis=0))
-boxes   = outputs[-4]
-scores  = outputs[-3]
-labels  = outputs[-2]
-masks   = outputs[-1]
-# correct boxes for image scale
-boxes /= scale
-# change to (x, y, w, h) (MS COCO standard)
-boxes[..., 2] -= boxes[..., 0]
-boxes[..., 3] -= boxes[..., 1]
 
 # process image
 start = time.time()
@@ -69,7 +57,7 @@ boxes /= scale
 
 # visualize detections
 for box, score, label, mask in zip(boxes, scores, labels, masks):
-    if score < 0.4:
+    if score < 0.5:
         break
 
     color = label_color(label)  
@@ -77,7 +65,7 @@ for box, score, label, mask in zip(boxes, scores, labels, masks):
     draw_box(draw, b, color=color)
     
     mask = mask[:, :, label]
-    draw_mask(draw, b, mask, color=label_color(label))
+    #draw_mask(draw, b, mask, color=label_color(label))
     
     caption = "{} {:.3f}".format(labels_to_names[label], score)
     draw_caption(draw, b, caption)
